@@ -1,0 +1,7 @@
+#!/bin/sh
+
+docker stop configured-nginx
+docker rm configured-nginx
+
+docker build -t nginx-configration .
+docker run --name configured-nginx -p 8080:80 nginx-configration
